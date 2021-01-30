@@ -1,0 +1,43 @@
+.desktopNav_container {
+    display: flex;
+    justify-content:  space-between;
+}
+
+.desktopNavLeft_container {
+    width: 30%;
+    height: 5%;
+}
+
+.desktopNavLeft_container > .logo {
+    width: 45%;
+}
+
+
+.desktopNavRight_container {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* .desktopNavRight_container > h4 {
+        margin-right: 2em;
+        font-weight: bold;
+} */
+
+.link {
+    margin-right: 5px;
+    padding: 8px;
+    margin-top: 45px;
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+
+}
+
+.links > h4 {
+    font-weight: 100;
+}
+
