@@ -15,10 +15,12 @@ app.use(cors())
 //App Routes files
 
 const houseRouter = require('./Routes/HouseListing/HLRoute')
+const houseFetchRoute = require('./Routes/HouseFetchRoutes/HouseFetch')
 
 
 //App route
 app.use(houseRouter)
+app.use(houseFetchRoute)
 
 
 //server entry point
