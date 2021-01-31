@@ -1,0 +1,33 @@
+.HouseList__container{
+    margin-top: 3.5em;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.single__house hr {
+ 
+    margin-bottom: 10px;
+    height: 4px;
+    border: none;
+    /* color: green; */
+    background: #1a53ff
+}
+
+.single__house {
+    max-width: 400px;
+    max-height: 400px;
+    margin-left: 0.5em;
+    margin-bottom: 2em;
+}
+
+.single__house  img {
+   max-width:100%;
+   max-height: 100%;
+}
+
+.House__price {
+    font-weight: 700;
+}
+

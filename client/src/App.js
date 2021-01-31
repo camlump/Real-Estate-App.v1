@@ -12,6 +12,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route path="/house-sale">
+        <Navbar />
           <ForSale />
         </Route>
           <Route path="/list-your-property">
