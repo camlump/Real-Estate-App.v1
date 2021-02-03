@@ -1,5 +1,6 @@
 
-
+require("dotenv").config({path: "./.env"});
+const path = require('path')
 const express = require("express");
 const cors = require('cors')
 const app = express()
@@ -21,6 +22,18 @@ const houseFetchRoute = require('./Routes/HouseFetchRoutes/HouseFetch')
 //App route
 app.use(houseRouter)
 app.use(houseFetchRoute)
+
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, '/client/build')));
+
+    app.get("*", (req, res)=>{
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+    })
+} else {
+    app.get('/', (req, res)=>{
+        res.send('API RUNNING')
+    })
+}
 
 
 //server entry point
