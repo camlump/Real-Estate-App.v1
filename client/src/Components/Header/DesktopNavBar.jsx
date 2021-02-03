@@ -17,7 +17,7 @@ const DesktopNavBar = () => {
 
             <div className="desktopNavRight_container">
               <Link to="/house-sale" className="links"><h3 className="link">For Sale</h3></Link> 
-              <Link to="properties/rent" className="links"><h3 className="link">To Rent</h3></Link> 
+              <Link to="/house-rent" className="links"><h3 className="link">To Rent</h3></Link> 
              <Link  to="/list-your-property" className="links"><h3 className="link">Sell Your property</h3> </Link> 
              <Link to="/contact-us" className="links"><h3 className="link">Contact Us</h3></Link> 
             </div>
