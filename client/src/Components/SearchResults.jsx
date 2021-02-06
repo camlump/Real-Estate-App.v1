@@ -39,7 +39,7 @@ const HouseOnList = () => {
             return (
               <div className="house__details" key={house._id}>
                 <div className="img__container">
-                  <Link to={`/house/house-details/${house._id}`}>
+                  <Link to={`/house-details/${house._id}`}>
                     <img
                       src={house.house_details.house_image}
                       alt="house image"
@@ -56,7 +56,7 @@ const HouseOnList = () => {
                   </h3>
                   <div className="house__numbers">
                   <h3 className="House__summary">{`${house.house_details.numOfBeds} Bds, ${house.house_details.numOfBaths} ba, - House for ${house.house_details.isSaleOrRent.toLowerCase()}.`}</h3>
-                    <h3>{`${house.house_details.squarefeet} sqft,  home in  ${house.house_location.city},  ${house.house_location.us_state}.`}</h3>
+                    <h3>{`${house.house_details.squarefeet.toLocaleString(navigator.language, {minimumFractionDigits: 0})} sqft,  home in  ${house.house_location.city},  ${house.house_location.us_state}.`}</h3>
                   </div>
                  
                 </div>

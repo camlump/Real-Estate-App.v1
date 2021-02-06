@@ -1,18 +1,49 @@
 
 
 
+@media(max-width: 767px) {
+    .Banner__container .container {
+        width: 100%;
+        text-align: center;
+     }
 
-.text__box h3 {
-    font-family: 'Lato';
-    font-weight: bold;
+     .Banner__container .container h2 {
+         margin-top: 20px;
+        font-family: 'Lato';
+         font-size: 20px;
+         font-weight: bold;
+         padding-left: 12px;
+         padding-right: 12px;
+
+     }
+     
+     .Banner__container .container .row {
+         margin-top: 20px;
+         border-top: 20px solid #0E1152 ;
+         display: flex;
+         flex-direction: column;
+     }
+     
+     .Banner__container .container .row .col {
+         text-align: center;
+         border-bottom: solid 2px #e5e5e5;
+         padding: 20px;
+     }
+     .text__box h2 {
+         font-family: 'Lato';
+         font-weight: bold;
+     }
+     
+     .text__box p {
+         font-family: "Lato";
+     }
+
+
 }
 
-.text__box p {
-    font-family: "Lato";
-}
 
 
-@media(min-width: 700px) {
+@media(min-width: 768px) {
     .Banner__container  {
         text-align: center;
          width: 100%;
@@ -26,8 +57,9 @@
     .Banner__container .container h2 {
         margin-top: 50px;
         margin-bottom: 30px;
-        font-family: 'Coda Caption';
+        font-family: 'Lato';
         color: #0E1152;
+        font-weight: bold;
     }
 
      

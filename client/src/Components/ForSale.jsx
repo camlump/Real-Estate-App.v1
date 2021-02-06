@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import axios from "axios";
-import '../StyleSheet/HouseList.css'
+import "../StyleSheet/HouseList.css";
 
 // import { useDispatch, useSelector } from 'react-redux'
 // import { houseForSaleAction } from '../store/Actions/HouseFetchAction';
@@ -19,7 +19,6 @@ const ForSale = () => {
       .get(url)
       .then((res) => {
         setHouses(res.data);
-        
       })
       .catch((error) => {
         console.log(error);
@@ -27,15 +26,29 @@ const ForSale = () => {
   });
   return (
     <div className="Houses__container">
+      <h2>Houses for Sale.</h2>
       {houses && (
-          <div className="HouseList__container">
+        <div className="HouseList__container">
           {houses.map((house) => {
-              return (
-                  <div key={house._id} className="single__house">
-                  <hr/>
-              <Link to={`/house-details/${house._id}`}><img src={house.house_details.house_image} alt="house picture" /></Link>
-                <h4 className="House__price">${house.house_details.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</h4>
-                <h4 className="House__summary">{`${house.house_details.numOfBeds} Bedroom, single family home in ${house.house_location.city}.`}</h4>
+            return (
+              <div key={house._id} className="single__house">
+                <hr />
+               
+                  <Link to={`/house-details/${house._id}`}>
+                    <img
+                      src={house.house_details.house_image}
+                      alt="house picture"
+                    />
+                  </Link>
+                
+                <h4 className="House__price">
+                  $
+                  {house.house_details.price.toLocaleString(
+                    navigator.language,
+                    { minimumFractionDigits: 0 }
+                  )}
+                </h4>
+                <h4 className="House__summary">{`${house.house_details.numOfBeds} Bedroom, single family home in ${house.house_location.city}, ${house.house_location.us_state}`}</h4>
               </div>
             );
           })}

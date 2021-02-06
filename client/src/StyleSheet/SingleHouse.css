@@ -1,0 +1,126 @@
+
+
+.HouseDescription__leftContainer {
+    width: 100vw;
+    margin-top: 20px;
+}
+
+.HouseDescription__leftContainer .icon {
+    position: absolute;
+    left: 1200px;
+    font-size: 50px;
+}
+
+.HouseDescription__leftContainer .img__container {
+    width: 100%;
+}
+
+.HouseDescription__leftContainer .number_container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-right: 20px;
+    padding-bottom: 15px;
+}
+
+.HouseDescription__leftContainer .number_container h5 {
+    
+    font-size: 14px;
+    font-family: 'Lato';
+    font-weight: 400;
+    
+}
+
+.HouseDescription__leftContainer .housePrice {
+    font-weight: bold;
+    font-family: 'Lato';
+    margin-left: 10px;
+    
+    font-size: 24px;
+}
+
+.HouseDescription__leftContainer .houseDetails {
+    font-family: 'Lato';
+    font-weight: 400;
+    margin-left: 10px;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.HouseDescription__leftContainer h4 {
+    font-family: 'Lato';
+    font-weight: 400;
+    margin-left: 10px;
+    font-size: 18px;
+    padding-bottom: 10px;
+
+}
+
+.HouseDescription__leftContainer .houseText {
+    padding: 20px;
+    text-align: left;
+}
+@media( min-Width:411px) {
+
+    .HouseDescription__leftContainer {
+        width: 100vw;
+        margin-top: 20px;
+    }
+    
+    .HouseDescription__leftContainer .img__container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .HouseDescription__leftContainer .houseText {
+        padding: 12px;
+        text-align: left;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .HouseDescription__leftContainer {
+        width: 100vw;
+        margin-top: 20px;
+    }
+    
+    .HouseDescription__leftContainer .img__container {
+        width: 900px;
+        padding: auto 50px;
+    }
+
+    .HouseDescription__leftContainer .img__container .icon {
+        color: red;
+        margin-top: -400px;
+    
+    }
+
+    .HouseDescription__leftContainer .number_container {
+       
+       display: inline-flex;
+    }
+    
+    .HouseDescription__leftContainer .number_container h5 {
+        
+        font-size: 20px;
+        font-family: 'Lato';
+        font-weight: 400;
+        margin-left: 20px;
+        padding-top: 7px;
+        
+    }
+
+    .HouseDescription__leftContainer .number_container .housePrice{
+        font-size: 36px;
+        margin-left: 22px;
+    }
+
+    .HouseDescription__leftContainer .houseText {
+        padding: 20px;
+        text-align: left;
+    }
+
+    
+
+}

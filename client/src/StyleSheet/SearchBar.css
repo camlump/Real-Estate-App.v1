@@ -1,10 +1,11 @@
 .searchBar__container {
-    height: 50vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     /* margin-left: auto;
     margin-right: auto; */
     align-items: center;
+    
     margin-top: 0;
     background: url('../images/neighborhood.jpeg');
     background-position: center;
@@ -18,11 +19,16 @@
 }
 
 .search__textPhrase {
+    margin-left: 15px;
     color: #fff;
+    
+}
+.search__textPhrase h3 {
+    font-size: 18px;
     font-family: 'Lato';
 }
-
 .search__textPhrase, .searchInput {
+   
     margin-bottom: 1.4em;
 }
 
@@ -32,10 +38,59 @@
     align-items: center;
     border-radius: 99px;
     border: 2px solid #e5e5e5;
-    padding: .5em 1.5em;
+    padding: .25em .75em;
 }
 
 .searchInput > input {
     border: 0;
     outline: none;
+}
+
+
+@media (min-width: 992px) {
+    .searchBar__container {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        /* margin-left: auto;
+        margin-right: auto; */
+        align-items: center;
+        
+        margin-top: 0;
+        background: url('../images/neighborhood.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: blur(50%);
+    }
+    
+    .searchbar_field {
+       margin-top: 90px;
+    }
+    
+    .search__textPhrase {
+        
+        color: #fff;
+        font-family: 'Lato';
+    }
+    
+    .search__textPhrase, .searchInput {
+       
+        margin-bottom: 1.4em;
+    }
+    
+    .searchInput {
+        background: #fff;
+        display: flex;
+        align-items: center;
+        border-radius: 99px;
+        border: 2px solid #e5e5e5;
+        padding: .5em 1.5em;
+    }
+    
+    .searchInput > input {
+        border: 0;
+        outline: none;
+    }
+
 }
