@@ -4,10 +4,12 @@ const mongoose = require('mongoose');
 const HouseSchema = mongoose.Schema({
     house_location: {
         city:{type:String, required: true},
-        county:{type:String, required: true}
+        county:{type:String, required: true},
+        us_state: {type: String, required: true}
     },
 
     house_details: {
+        squarefeet:{type: Number, required: true},
         price: { type: Number, required: true},
         isSaleOrRent: {type: String, required: true},
         numOfBeds: {type: Number, required: true},

@@ -1,0 +1,77 @@
+
+ .container {
+    margin: 0px;
+}
+
+.container h3 {
+    font-family: 'Lato';
+    font-size: 20px;
+    margin-left: 12px;
+}
+.container .query {
+    font-weight: bold;
+}
+.house__details {
+    margin: 20px auto;
+    
+}
+
+
+.house__details .img__container {
+    width: 100vw;
+}
+
+.house__details .img__container img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.house_info h3 {
+    font-family: 'Lato';
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.house__numbers h3 {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+
+
+
+.Houses__container {
+    margin-top: 50px;
+}
+
+
+@media(min-width: 700px) {
+
+    
+
+    .container {
+        margin: 0px;
+    }
+    
+    .house__details {
+        border-bottom: 2px solid #dddd;
+        margin-left: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .house__details .img__container {
+        width: 350px;
+    }
+    
+    .house__details .img__container img {
+        width: 100%;
+    }
+
+}
+
+
+

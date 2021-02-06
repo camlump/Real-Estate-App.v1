@@ -43,6 +43,8 @@ router.post("/api/house-listing", async (request, response)=>{
             numOfBaths,
             numOfGarages,
             isSaleOrRent,
+            us_state,
+            squarefeet
         } = fields
 
         const { house_image } = files;
@@ -50,6 +52,8 @@ router.post("/api/house-listing", async (request, response)=>{
         console.log('Price: ', price)
         console.log('City: ', city)
         console.log('county: ', county)
+        console.log('state: ', us_state)
+        console.log('squarefeet', squarefeet)
         console.log('numOfGarages: ', numOfGarages)
         console.log('numOfBeds: ', numOfBeds)
         console.log('numOfBaths: ', numOfBaths)
@@ -68,11 +72,14 @@ router.post("/api/house-listing", async (request, response)=>{
                     
                     county: county,
                     city: city,
+                    us_state: us_state
+                   
 
                 },
 
                 house_details: {
                     price: price,
+                    squarefeet: squarefeet,
                     numOfBeds: numOfBeds,
                     numOfBaths: numOfBaths,
                     numOfGarages: numOfGarages,

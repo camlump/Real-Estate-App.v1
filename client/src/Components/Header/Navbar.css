@@ -1,0 +1,44 @@
+
+
+.navbar .logo {
+    width: 150px;
+}
+
+.navbar {
+    padding: 1rem 1.5rem;
+    border-bottom: solid 1px #e5e5e5;
+}
+
+
+
+
+
+@media(min-width:700px) {
+    .navbar .logo {
+        width: 200px;
+    }
+    
+    .navbar {
+        height: 70px;
+        background: #fff;
+        padding: 2rem 2rem;
+        border-bottom: solid 1px #e5e5e5;
+    }
+    
+    
+    .navbar .navbar-nav .nav-link {
+        text-decoration: none !important;
+       
+       
+        font-size: 18px;
+        font-weight: 300;
+     
+    }
+
+    .navbar .navbar-nav .nav-link a {
+        font-family: "Lato";
+        color: #111;
+    }
+
+}
+

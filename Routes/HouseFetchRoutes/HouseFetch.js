@@ -48,4 +48,35 @@ router.get('/api/house-details/:id', async(req, res)=>{
 })
 
 
+router.get("/api/house-search/:query", async (request, response) => {
+    const us_states = [
+      "Maryland",
+      "Virginia",
+      "California",
+      "Georgia",
+      "Texas",
+      "Florida",
+      "North Carolina",
+      "New York",
+    ];
+    const query = request.params.query;
+  
+    const result = [];
+    for (let counter = 0; counter < us_states.length; counter++) {
+      let currentStates = us_states[counter];
+      if (query.toLowerCase().includes(currentStates.toLowerCase())) {
+        result.push(currentStates);
+      }
+    }
+  
+    House.find({ "house_location.us_state": result[0] })
+      .exec()
+      .then((data) => {
+        return response.status(200).json(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
 module.exports = router;

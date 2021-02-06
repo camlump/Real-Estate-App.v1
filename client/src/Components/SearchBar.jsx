@@ -1,9 +1,20 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search';
 import "../StyleSheet/SearchBar.css"
 
+
 const SearchBar = () => {
+    const history = useHistory();
+    const [search, setSearchQuery] = useState("");
+
+    // const redirectToFilterSearchResults = (location)=>{
+    //     history.push(`search/results-location/${location}`)
+    //     }
+    
+    const searchBarQuery = () =>{
+        history.push(`/house/search/${search}`)
+    };
     return (
         <div className="searchBar__container">
             <div className="searchbar_field">
@@ -11,17 +22,8 @@ const SearchBar = () => {
                 <h3>Find your Ideal Home</h3>
                 </div>
                 <div className="searchInput">
-                    <input type="text" placeholder="Search"/>
-                    <SearchIcon/>
-                </div>
-                <div className="filter">
-                    Filter by Province: {" "}
-                     <select>
-                        <option value="">Buckhead</option>
-                        <option value="">Brookhaven</option>
-                        <option value="">Roswell</option>
-                        <option value="">Alpharetta</option>
-                    </select>
+                    <input type="text" placeholder="Search by state..." onChange={(e)=>{setSearchQuery(e.target.value)}}/>
+                    <SearchIcon onClick={searchBarQuery}/>
                 </div>
             </div>
         </div>
@@ -29,5 +31,3 @@ const SearchBar = () => {
 }
 
 export default SearchBar
-
-
