@@ -14,6 +14,8 @@ const SearchBar = () => {
     
     const searchBarQuery = () =>{
         history.push(`/house/search/${search}`)
+            
+        
     };
     return (
         <div className="searchBar__container">

@@ -32,14 +32,17 @@ const ForSale = () => {
           {houses.map((house) => {
             return (
               <div key={house._id} className="single__house">
-                <hr />
-               
+              
+
+                  <div className="img_container">
                   <Link to={`/house-details/${house._id}`}>
-                    <img
+                    <img className="img-fluid"
                       src={house.house_details.house_image}
                       alt="house picture"
                     />
                   </Link>
+                    </div>                 
+                
                 
                 <h4 className="House__price">
                   $

@@ -1,5 +1,6 @@
 import e from "cors";
 import React, { Component } from "react";
+import '../StyleSheet/ContactForm.css'
 
 export default class ContactForm extends Component {
     constructor(props){

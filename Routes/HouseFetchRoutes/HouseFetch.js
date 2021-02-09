@@ -14,7 +14,7 @@ router.get('/api/house-sale', async(req, res)=>{
 
     try{
         House.find({'house_details.isSaleOrRent': 'SALE'}).exec().then((data)=>{
-            console.log(data);
+            // console.log(data);
             return res.status(200).json(data)
         })
     } catch(error) {
@@ -37,6 +37,7 @@ router.get('/api/house-rent', async(req, res)=>{
 })
 
 
+
 router.get('/api/house-details/:id', async(req, res)=>{
 
     await House.findOne({_id:req.params.id}).exec().then(data=>{
@@ -48,10 +49,16 @@ router.get('/api/house-details/:id', async(req, res)=>{
 })
 
 
+
+
+
+
 router.get("/api/house-search/:query", async (request, response) => {
     const us_states = [
       "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Minor Outlying Islands", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "U.S. Virgin Islands", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
     ];
+
+    
     const query = request.params.query;
   
     const result = [];
@@ -72,4 +79,10 @@ router.get("/api/house-search/:query", async (request, response) => {
       });
   });
 
+ 
+
+ 
+
+ 
+  
 module.exports = router;

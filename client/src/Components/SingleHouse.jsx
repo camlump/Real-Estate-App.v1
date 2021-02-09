@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import BackspaceIcon from '@material-ui/icons/Backspace';
-import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
+// import BackspaceIcon from '@material-ui/icons/Backspace';
+// import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import "../StyleSheet/SingleHouse.css";
 
 import { Link } from 'react-router-dom'
@@ -47,7 +48,7 @@ const SingleHouse = () => {
     <div className="HosueDescription__container">
       {house && (
           <div className="HouseDescription__leftContainer">
-              {(house.house_details.isSaleOrRent === 'SALE') ? <Link to="/house-sale"><FullscreenExitIcon  className="icon"/></Link> : <Link to="/house-rent"><FullscreenExitIcon  className="icon"/></Link>  }
+              {(house.house_details.isSaleOrRent === 'SALE') ? <Link to="/house-sale"><ArrowBackIosIcon className="icon"/></Link> : <Link to="/house-rent"><ArrowBackIosIcon  className="icon"/></Link>  }
           
           <div className="img__container">
             <img
@@ -78,7 +79,7 @@ const SingleHouse = () => {
               house.house_details.numOfBeds
             } Bedroom house in ${
               house.house_location.city
-            } for ${house.house_details.isSaleOrRent.toLowerCase()}.`}</h3>
+            } for ${house.house_details.isSaleOrRent}.`}</h3>
 
             <h4>
               2423 Duck Creek Road, {house.house_location.city},{" "}

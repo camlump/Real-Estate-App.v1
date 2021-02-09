@@ -1,6 +1,10 @@
-
+/* 
  .container {
     margin: 0px;
+} */
+
+.container{
+    padding: 0;
 }
 
 .container h3 {

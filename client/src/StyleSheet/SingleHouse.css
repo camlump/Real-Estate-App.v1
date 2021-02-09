@@ -7,20 +7,33 @@
 
 .HouseDescription__leftContainer .icon {
     position: absolute;
-    left: 1200px;
+    left: 40px;
     font-size: 50px;
+    color: #fff;
+    top: 125px;
+    z-index: 1;
 }
 
 .HouseDescription__leftContainer .img__container {
     width: 100%;
+    transition: 0.5s ease-in-out;
 }
+
+.HouseDescription__leftContainer .img__container:hover {
+   
+    filter: brightness(40%);
+}
+/* .HouseDescription__leftContainer .img__container img:hover {
+    filter: brightness(40%);
+    
+} */
 
 .HouseDescription__leftContainer .number_container {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
     margin-right: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 
 .HouseDescription__leftContainer .number_container h5 {
@@ -117,10 +130,22 @@
     }
 
     .HouseDescription__leftContainer .houseText {
-        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0;
         text-align: left;
     }
 
     
 
 }
+
+
+/* .single__house {
+    margin: 15px;
+    max-width: 400px;
+    min-height: 425px;
+    margin-left: 0.5em;
+    margin-bottom: 1em;
+    background: #eeeeee;
+} */

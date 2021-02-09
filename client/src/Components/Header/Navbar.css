@@ -8,6 +8,11 @@
     width: 120px;
 }
 
+.navbar .navbar-nav .nav-link a {
+    font-family: "Lato";
+    color: #111;
+}
+
 @media (min-width:992px){
     .navbar{
         height: 70px;
@@ -16,6 +21,10 @@
     }
     .navbar .logo {
         width: 150px;
+    }
+    .navbar .navbar-nav .nav-link a {
+        font-family: "Lato";
+        color: #111;
     }
 
 }

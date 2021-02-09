@@ -5,13 +5,14 @@ const cors = require('cors')
 const app = express()
 const path = require('path')
 require("dotenv").config()
+const bodyParser = require('body-parser')
 // const bodyParser = require("body-parser")
 
 
 //MIDDLEWARE
 app.use(cors())
 
-
+app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 //App Routes files
