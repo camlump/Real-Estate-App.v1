@@ -13,7 +13,7 @@ const {House} = require('../../Models/House');
 router.get('/api/house-sale', async(req, res)=>{
 
     try{
-        House.find({'house_details.isSaleOrRent': 'SALE'}).exec().then((data)=>{
+        House.find({'isSaleOrRent': 'SALE'}).exec().then((data)=>{
             // console.log(data);
             return res.status(200).json(data)
         })
@@ -27,7 +27,7 @@ router.get('/api/house-sale', async(req, res)=>{
 router.get('/api/house-rent', async(req, res)=>{
 
     try{
-        House.find({'house_details.isSaleOrRent': 'RENT'}).exec().then((data)=>{
+        House.find({'isSaleOrRent': 'RENT'}).exec().then((data)=>{
             return res.status(200).json(data)
         })
     } catch(error) {
@@ -69,7 +69,7 @@ router.get("/api/house-search/:query", async (request, response) => {
       }
     }
   
-    House.find({ "house_location.us_state": result[0] })
+    House.find({'us_state': result[0] })
       .exec()
       .then((data) => {
         return response.status(200).json(data);

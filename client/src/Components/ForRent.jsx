@@ -33,10 +33,10 @@ const ForRent = () => {
           {houses.map((house) => {
               return (
                   <div key={house._id} className="single__house">
-                  <hr/>
-               <Link to={`/house-details/${house._id}`}><img src={house.house_details.house_image} alt="house picture" /></Link>
-                <h4 className="House__price"> For ${house.house_details.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} a month.</h4>
-                <h4 className="House__summary">{`${house.house_details.numOfBeds} Bedroom, single family home in ${house.house_location.city}.`}</h4>
+                
+               <Link to={`/house-details/${house._id}`}><img src={house.house_image} alt="house picture" /></Link>
+                <h4 className="House__price"> For ${house.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} a month.</h4>
+                <h4 className="House__summary">{`${house.numOfBeds} Bedroom, single family home in ${house.city}.`}</h4>
               </div>
             );
           })}

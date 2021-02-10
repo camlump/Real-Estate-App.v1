@@ -37,7 +37,7 @@ const ForSale = () => {
                   <div className="img_container">
                   <Link to={`/house-details/${house._id}`}>
                     <img className="img-fluid"
-                      src={house.house_details.house_image}
+                      src={house.house_image}
                       alt="house picture"
                     />
                   </Link>
@@ -46,12 +46,12 @@ const ForSale = () => {
                 
                 <h4 className="House__price">
                   $
-                  {house.house_details.price.toLocaleString(
+                  {house.price.toLocaleString(
                     navigator.language,
                     { minimumFractionDigits: 0 }
                   )}
                 </h4>
-                <h4 className="House__summary">{`${house.house_details.numOfBeds} Bedroom, single family home in ${house.house_location.city}, ${house.house_location.us_state}`}</h4>
+                <h4 className="House__summary">{`${house.numOfBeds} Bedroom, single family home in ${house.city}, ${house.us_state}`}</h4>
               </div>
             );
           })}

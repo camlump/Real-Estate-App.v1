@@ -18,9 +18,7 @@ const SingleHouse = () => {
   const [house, setHouse] = useState("");
 
   //HANDLE EMAIL FORM, USESTATE
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  
 
   useEffect(() => {
     const loadData = async () => {
@@ -36,37 +34,30 @@ const SingleHouse = () => {
 
   // console.log(house)
 
-  const sendMessage = (e) => {
-    e.preventdefault();
-
-    console.log("Email", email);
-    console.log("Subject", subject);
-    console.log("message", message);
-  };
-
+ 
   return (
     <div className="HosueDescription__container">
       {house && (
           <div className="HouseDescription__leftContainer">
-              {(house.house_details.isSaleOrRent === 'SALE') ? <Link to="/house-sale"><ArrowBackIosIcon className="icon"/></Link> : <Link to="/house-rent"><ArrowBackIosIcon  className="icon"/></Link>  }
+              {(house.isSaleOrRent === 'SALE') ? <Link to="/house-sale"><ArrowBackIosIcon className="icon"/></Link> : <Link to="/house-rent"><ArrowBackIosIcon  className="icon"/></Link>  }
           
           <div className="img__container">
             <img
               className="img-fluid"
-              src={house.house_details.house_image}
+              src={house.house_image}
               alt=""
             />
           </div>
           <div className="number_container">
-            <h3 className="housePrice">{`$${house.house_details.price.toLocaleString(
+            <h3 className="housePrice">{`$${house.price.toLocaleString(
               navigator.language,
               { minimumFractionDigits: 0 }
             )}`}</h3>
-            <h5> {house.house_details.numOfBeds} bd |</h5>
-            <h5> {house.house_details.numOfBaths} ba |</h5>
+            <h5> {house.numOfBeds} bd |</h5>
+            <h5> {house.numOfBaths} ba |</h5>
             <h5>
               {" "}
-              {house.house_details.squarefeet.toLocaleString(
+              {house.squarefeet.toLocaleString(
                 navigator.language,
                 { minimumFractionDigits: 0 }
               )}{" "}
@@ -76,14 +67,14 @@ const SingleHouse = () => {
 
           <div className="houseText">
             <h3 className="houseDetails">{`${
-              house.house_details.numOfBeds
+              house.numOfBeds
             } Bedroom house in ${
-              house.house_location.city
-            } for ${house.house_details.isSaleOrRent}.`}</h3>
+              house.city
+            } for ${house.isSaleOrRent}.`}</h3>
 
             <h4>
-              2423 Duck Creek Road, {house.house_location.city},{" "}
-              {house.house_location.us_state}
+              2423 Duck Creek Road, {house.city},{" "}
+              {house.us_state}
             </h4>
 
             <h4>
