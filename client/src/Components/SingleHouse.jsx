@@ -17,8 +17,9 @@ const SingleHouse = (props) => {
   //GET HOUSE OBJECT, USESTATE
 
   const url = `http://localhost:5000/api/house-details/${props.match.params.id}`;
-  const [mounted, setMounted] = useState(true);
-  const [house, setHouse] = useState("");
+  const [showLoading, setShowLoading] = useState(true)
+  // const [mounted, setMounted] = useState(true);
+  const [house, setHouses] = useState("");
 
   // useEffect(() => {
   //   const loadData = async () => {
