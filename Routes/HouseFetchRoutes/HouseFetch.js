@@ -40,7 +40,7 @@ router.get('/api/house-rent', async(req, res)=>{
 
 router.get('/api/house-details/:id', async(req, res)=>{
 
-    await House.findOne({_id:req.params.id}).exec().then(data=>{
+    await House.findById(req.params.id).exec().then(data=>{
 
         return res.status(200).json(data)
     }).catch(error =>{
