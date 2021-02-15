@@ -20,17 +20,27 @@ const SingleHouse = (props) => {
   const [mounted, setMounted] = useState(true);
   const [house, setHouse] = useState("");
 
-  useEffect(() => {
-    const loadData = async () => {
-      const { data } = await axios.get(url);
+  // useEffect(() => {
+  //   const loadData = async () => {
+  //     const { data } = await axios.get(url);
 
-      if (mounted) {
-        setHouse(data);
-      }
+  //     if (mounted) {
+  //       setHouse(data);
+  //     }
+  //   };
+  //   loadData();
+  //   return () => [setMounted(false)];
+  // }, [mounted, url]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(url);
+      setHouses(result.data);
+      setShowLoading(false);
     };
-    loadData();
-    return () => [setMounted(false)];
-  }, [mounted, url]);
+  
+    fetchData();
+  }, []);
 
   async function handleDelete() {
     try {

@@ -18,33 +18,33 @@ const App = () => {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/house/search/:query">
+        <Route exact path="/house/search/:query">
         <SearchResults />
         </Route>
-        <Route path="/contact-us">
-          <ContactForm />
+        <Route path="/about-us">
+          {/* <About /> */}
           </Route>
        <Route path="/edit/:id">
           <HouseEditForm />
        </Route>
-        <Route path="/house-details/:id">
+        <Route exact path="/house-details/:id">
         <SingleHouse />
       
 
         </Route>
-        <Route path="/house-rent">
+        <Route exact path="/house-rent">
         
           <ForRent/>
         </Route>
-        <Route path="/house-sale">
+        <Route exact path="/house-sale">
       
           <ForSale />
         </Route>
-          <Route path="/list-your-property">
+          <Route exact path="/list-your-property">
          
             <HouseListingForm />
           </Route>
-        <Route path="/">
+        <Route exact path="/">
         
           <Searchbar />
           <Banner />
