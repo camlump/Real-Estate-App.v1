@@ -121,11 +121,37 @@ router.post("/api/house-listing", async (request, response)=>{
 
 
 
-router.put('/api/house-details/:id', (req, res)=>{
+// router.get('/api/house-details/edit/:id', (req, res)=>{
+
+//      House.findOne({_id:req.params.id}).exec().then(data=>{
+
+//         return res.status(200).json(data)
+//     }).catch(error =>{
+//         return res.status(400).json(error)
+//     })
+
+    
+// }).put('/api/house-details/edit/:id', (req, res)=>{
+
+//     House.findByIdAndUpdate({_id: req.params.id}, req.body).then(()=>{
+//             res.status(200).end()
+    
+//     })
+// })
+
+
+router.put('/api/house-details/edit/:id', (req, res)=>{
+
     House.findByIdAndUpdate(req.params.id, req.body).then(()=>{
-        res.status(200).end()
+            res.status(200).end()
+    
     })
 })
+
+
+
+
+
 
 
 router.delete('/api/house-details/:id', (req, res)=>{

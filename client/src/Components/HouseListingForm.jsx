@@ -1,5 +1,5 @@
 import React , {useState }from 'react'
-
+import { Link } from 'react-router-dom'
 import '../StyleSheet/HouseListingForm.css'
 import axios from 'axios'
 
@@ -98,7 +98,8 @@ const HouseListingForm = () => {
                 <input type="file" placeholder="house image" 
                 onChange={(e)=>setHouseImage(e.target.files[0])} 
                 />
-                <button onClick={listProperty}>List your Property</button>
+                  
+                    <Link to="/"> <button onClick={listProperty}>List your Property</button> </Link> 
                 
             </div>
             

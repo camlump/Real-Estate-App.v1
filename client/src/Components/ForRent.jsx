@@ -14,17 +14,28 @@ const ForRent = () => {
   // );
   const url = "/api/house-rent";
   const [houses, setHouses] = useState([]);
+  const [showLoading, setShowLoading] = useState(true);
   useEffect(() => {
-    axios
-      .get(url)
-      .then((res) => {
-        setHouses(res.data);
+    const fetchData = async () => {
+      const result = await axios(url);
+      setHouses(result.data);
+      setShowLoading(false);
+    };
+  
+    fetchData();
+  }, []);
+  // const [houses, setHouses] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get(url)
+  //     .then((res) => {
+  //       setHouses(res.data);
         
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // });
   return (
     <div className="Houses__container">
         <h4>Properties for rent.</h4>
@@ -36,7 +47,7 @@ const ForRent = () => {
                 
                <Link to={`/house-details/${house._id}`}><img src={house.house_image} alt="house picture" /></Link>
                 <h4 className="House__price"> For ${house.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })} a month.</h4>
-                <h4 className="House__summary">{`${house.numOfBeds} Bedroom, single family home in ${house.city}.`}</h4>
+                <h4 className="House__summary">{`${house.numOfBeds} Bedroom, single family home in ${house.city.charAt(0).toUpperCase() + house.city.slice(1)}, ${house.us_state.charAt(0).toUpperCase() + house.us_state.slice(1) }.`}</h4>
               </div>
             );
           })}

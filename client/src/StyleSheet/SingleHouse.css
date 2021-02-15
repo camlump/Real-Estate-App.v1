@@ -97,11 +97,29 @@
         width: 100vw;
         margin-top: 20px;
     }
+    .HouseDescription__leftContainer .houseImg-container {
+        display: flex;
+    }
     
     .HouseDescription__leftContainer .img__container {
         width: 900px;
         padding: auto 50px;
     }
+
+    .HouseDescription__leftContainer  .placeholder-container {
+        width: 350px;
+        margin-top:15px;
+        left: 30px;
+    }
+
+    .HouseDescription__leftContainer  .placeholder-container .placeholder{
+        width: 100%;
+        margin: 12px;
+    }
+
+    /* .HouseDescription__leftContainer .img__container {
+        display: flex;
+    } */
 
     .HouseDescription__leftContainer .img__container .icon {
         color: red;

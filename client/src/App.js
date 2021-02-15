@@ -10,7 +10,9 @@ import ForRent from './Components/ForRent'
 import SingleHouse from './Components/SingleHouse'
 import ContactForm from './Components/ContactForm'
 import SearchResults from './Components/SearchResults'
+import HouseEditForm from './Components/EditHouseForm'
 import Footer from './Components/Footer'
+
 const App = () => {
   return (
     <Router>
@@ -21,10 +23,13 @@ const App = () => {
         </Route>
         <Route path="/contact-us">
           <ContactForm />
-
-        </Route>
+          </Route>
+       <Route path="/edit/:id">
+          <HouseEditForm />
+       </Route>
         <Route path="/house-details/:id">
         <SingleHouse />
+      
 
         </Route>
         <Route path="/house-rent">

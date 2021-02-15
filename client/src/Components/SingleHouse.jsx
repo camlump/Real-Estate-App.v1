@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from "react";
+// import { useHistory } from 'react-router-dom'
 import axios from "axios";
 // import BackspaceIcon from '@material-ui/icons/Backspace';
 // import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import "../StyleSheet/SingleHouse.css";
+import placeholder from '../images/placeholder-image.jpg'
+
 
 import { Link } from 'react-router-dom'
 
 
-const SingleHouse = () => {
+const SingleHouse = (props) => {
   const house_id = window.location.href.split("/")[4];
+
+
 
   // console.log('HOUSE ID: ', house_id);
   //GET HOUSE OBJECT, USESTATE
+  
   const url = `http://localhost:5000/api/house-details/${house_id}`;
   const [mounted, setMounted] = useState(true);
   const [house, setHouse] = useState("");
 
-  //HANDLE EMAIL FORM, USESTATE
+ 
   
 
   useEffect(() => {
@@ -32,6 +38,21 @@ const SingleHouse = () => {
     return () => [setMounted(false)];
   }, [mounted, url]);
 
+
+
+  async function handleDelete() { 
+    try {
+      await axios.delete(`${url}`); 
+      props.history.push("/house-sale"); 
+    } catch(error) {
+      console.error(error);
+    }
+  }
+
+ 
+ 
+    
+
   // console.log(house)
 
  
@@ -40,27 +61,36 @@ const SingleHouse = () => {
       {house && (
           <div className="HouseDescription__leftContainer">
               {(house.isSaleOrRent === 'SALE') ? <Link to="/house-sale"><ArrowBackIosIcon className="icon"/></Link> : <Link to="/house-rent"><ArrowBackIosIcon  className="icon"/></Link>  }
-          
+          <div className="houseImg-container">
           <div className="img__container">
             <img
               className="img-fluid"
               src={house.house_image}
-              alt=""
+              alt="house-image"
             />
+         
+
+          </div>
+          <div className="placeholder-container">
+          <img className="placeholder" src={placeholder} alt="placeholder-img"/>
+          <img className="placeholder" src={placeholder} alt="placeholder-img"/>
+          </div>
           </div>
           <div className="number_container">
-            <h3 className="housePrice">{`$${house.price.toLocaleString(
-              navigator.language,
-              { minimumFractionDigits: 0 }
-            )}`}</h3>
+            <h3 className="housePrice">{`$${house.price
+             // .toLocaleString(
+              //   navigator.language,
+              //   { minimumFractionDigits: 0 })
+            }`}</h3>
             <h5> {house.numOfBeds} bd |</h5>
             <h5> {house.numOfBaths} ba |</h5>
             <h5>
               {" "}
-              {house.squarefeet.toLocaleString(
-                navigator.language,
-                { minimumFractionDigits: 0 }
-              )}{" "}
+              {house.squarefeet
+              // .toLocaleString(
+              //   navigator.language,
+              //   { minimumFractionDigits: 0 })
+                }{" "}
               sqft
             </h5>
           </div>
@@ -69,12 +99,12 @@ const SingleHouse = () => {
             <h3 className="houseDetails">{`${
               house.numOfBeds
             } Bedroom house in ${
-              house.city
+              house.city.charAt(0).toUpperCase() + house.city.slice(1)
             } for ${house.isSaleOrRent}.`}</h3>
 
             <h4>
-              2423 Duck Creek Road, {house.city},{" "}
-              {house.us_state}
+              2423 Duck Creek Road, {house.city.charAt(0).toUpperCase() + house.city.slice(1)},{" "}
+              {house.us_state.charAt(0).toUpperCase() + house.us_state.slice(1)}
             </h4>
 
             <h4>
@@ -90,19 +120,13 @@ const SingleHouse = () => {
               eum.
             </h4>
           </div>
+       <Link to={`/edit/${house_id}`}> <button>Edit House</button></Link> 
+        <Link to="/house-sale"> <button onClick={handleDelete}>Delete House</button></Link> 
         </div>
       )}
-      {/* <div className="HouseForm">
-                <form className="Form" onSubmit={sendMessage} >
-                    <label>Email</label>
-                    <input type="email" onChange={(e)=>setEmail(e.target.value)} placeholder="Enter a valid email"/>
-                    <label >Subject</label>
-                    <input type="text" onChange={(e)=>setSubject(e.target.value)} placeholder="Enter a Subject"/>
-                    <label >Message</label>
-                    <textarea  cols="30" rows="10" onChange={(e)=>setMessage(e.target.value)} placeholder="Enter a message"></textarea>
-                    <button>Send</button>
-                </form>
-            </div> */}
+     <div className="edit-from">
+       
+     </div>
     </div>
   );
 };
