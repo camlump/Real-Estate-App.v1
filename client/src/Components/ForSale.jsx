@@ -56,9 +56,9 @@ const ForSale = (props) => {
                 <h4 className="House__price">
                   $
                   {house.price
-                  // .toLocaleString(
-                  //   navigator.language,
-                  //   { minimumFractionDigits: 0 })
+                  .toLocaleString(
+                    navigator.language,
+                    { minimumFractionDigits: 0 })
                   }
                 </h4>
                 <h4 className="House__summary">{`${house.numOfBeds} Bedroom, single family home in ${house.city.charAt(0).toUpperCase() + house.city.slice(1)}, ${house.us_state.charAt(0).toUpperCase() + house.us_state.slice(1) }`}</h4>

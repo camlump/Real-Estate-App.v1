@@ -29,16 +29,16 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-              <Link to="/house-sale" className="nav-link"><a>For Sale</a></Link> 
+              <Link to="/house-sale" className="nav-link">For Sale</Link> 
               </li>
               <li className="nav-item">
-              <Link to="/house-rent" className="nav-link"><a>To Rent</a></Link> 
+              <Link to="/house-rent" className="nav-link">To Rent</Link> 
               </li>
               <li>
-              <Link  to="/list-your-property" className="nav-link"><a >Sell </a> </Link> 
+              <Link  to="/list-your-property" className="nav-link">Sell</Link> 
               </li>
               <li className="nav-item">
-              <Link to="/contact-us" className="nav-link"><a>Contact Us</a></Link>
+              <Link to="/About-us" className="nav-link">About</Link>
               </li>
               
             </ul>

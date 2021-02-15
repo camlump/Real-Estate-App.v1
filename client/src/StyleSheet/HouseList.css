@@ -47,6 +47,17 @@
 
 }
 
+@media(min-width: 414px) {
+    .single__house {
+    
+        max-width: 414px;
+        max-height: 414px;
+        
+        margin-bottom: 20px;
+    }
+
+}
+
 
 
 @media (min-width: 700px) {

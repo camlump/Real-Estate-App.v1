@@ -8,9 +8,14 @@
     width: 120px;
 }
 
-.navbar .navbar-nav .nav-link a {
+.navbar .navbar-nav .nav-link {
     font-family: "Lato";
     color: #111;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+   background: #0E1152;
+    color: #e5e5e5
 }
 
 @media (min-width:992px){
@@ -22,9 +27,22 @@
     .navbar .logo {
         width: 150px;
     }
-    .navbar .navbar-nav .nav-link a {
+    .navbar .navbar-nav .nav-link  {
         font-family: "Lato";
         color: #111;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        transition: 0.5s ease-in-out;
+    }
+
+    .navbar .navbar-nav .nav-link:hover {
+        background: #0E1152;
+        color: #e5e5e5;
+    }
+
+    .navbar .navbar-nav .nav-link a:hover{
+        color: #e5e5e5;
     }
 
 }

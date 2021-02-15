@@ -7,7 +7,7 @@ import axios, {get, put}  from 'axios'
 import { Link, withRouter } from 'react-router-dom'
 
 const EditHouseForm = (props) => {
-  const house_id = window.location.href.split("/")[4];
+
     // const initialState = { 
    
     //     price: 0,
@@ -41,7 +41,7 @@ const EditHouseForm = (props) => {
 
 const [houseShow, setShowLoading] = useState(true);
 
-  const url = `http://localhost:5000/api/house-details/edit/${house_id}`;
+  const url = `http://localhost:5000/api/house-details/edit/${props.match.params.id}`;
 
   useEffect(function() { 
       setShowLoading(false);
