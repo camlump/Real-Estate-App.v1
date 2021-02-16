@@ -18,24 +18,14 @@ const SingleHouse = (props) => {
 
   const url = `http://localhost:5000/api/house-details/${props.match.params.id}`;
   const [showLoading, setShowLoading] = useState(true)
-  // const [mounted, setMounted] = useState(true);
+  
   const [house, setHouses] = useState("");
 
-  // useEffect(() => {
-  //   const loadData = async () => {
-  //     const { data } = await axios.get(url);
-
-  //     if (mounted) {
-  //       setHouse(data);
-  //     }
-  //   };
-  //   loadData();
-  //   return () => [setMounted(false)];
-  // }, [mounted, url]);
+  
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(url);
+      const result = await axios("/api/house-details  " + props.match.params.id);
       setHouses(result.data);
       setShowLoading(false);
     };
