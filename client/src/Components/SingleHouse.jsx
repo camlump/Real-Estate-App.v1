@@ -25,7 +25,7 @@ const SingleHouse = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("/api/house-details  " + props.match.params.id);
+      const result = await axios("/api/house-details/" + props.match.params.id);
       setHouses(result.data);
       setShowLoading(false);
     };
@@ -80,19 +80,19 @@ const SingleHouse = (props) => {
           </div>
           <div className="number_container">
             <h3 className="housePrice">{`$${house.price
-            // .toLocaleString(
-            //   navigator.language,
-            //   { minimumFractionDigits: 0 }
-            // )
+            .toLocaleString(
+              navigator.language,
+              { minimumFractionDigits: 0 }
+            )
             }`}</h3>
             <h5> {house.numOfBeds} bd |</h5>
             <h5> {house.numOfBaths} ba |</h5>
             <h5>
               {" "}
               {house.squarefeet
-              // .toLocaleString(navigator.language, {
-              //   minimumFractionDigits: 0,
-              // })
+              .toLocaleString(navigator.language, {
+                minimumFractionDigits: 0,
+              })
               }{" "}
               sqft
             </h5>
