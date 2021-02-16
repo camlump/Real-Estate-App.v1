@@ -89,9 +89,11 @@ const SingleHouse = (props) => {
             <h5> {house.numOfBaths} ba |</h5>
             <h5>
               {" "}
-              {house.squarefeet.toLocaleString(navigator.language, {
-                minimumFractionDigits: 0,
-              })}{" "}
+              {house.squarefeet
+              // .toLocaleString(navigator.language, {
+              //   minimumFractionDigits: 0,
+              // })
+              }{" "}
               sqft
             </h5>
           </div>
