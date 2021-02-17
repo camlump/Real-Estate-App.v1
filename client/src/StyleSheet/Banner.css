@@ -29,6 +29,27 @@
          border-bottom: solid 2px #e5e5e5;
          padding: 20px;
      }
+
+     
+     .text__box .button-box {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        margin-top: 10px !important; 
+    }
+
+
+
+     .text__box .button-box .btn-primary {
+        background: #0E1152;
+        border: none;
+        transition: 0.5s ease-in-out;
+    }
+
+    .text__box .button-box .btn-primary:hover {
+       background: #e5e5e5;
+       color: #0E1152;
+   }
      .text__box h2 {
          font-family: 'Lato';
          font-weight: bold;
@@ -81,7 +102,28 @@
             top: -20px
      }
      
-     
+     .text__box {
+      text-align: center;
+     }
+
+     .text__box .button-box {
+         text-align: center;
+         margin: 0;
+         padding: 0;
+         margin-top: 30px;
+     }
+
+     .text__box .button-box .btn-primary {
+         background: #0E1152;
+         border: none;
+         transition: 0.5s ease-in-out;
+     }
+
+     .text__box .button-box .btn-primary:hover {
+        background: #e5e5e5;
+        color: #0E1152;
+    }
+    
      
      .text__box h2 {
          font-family: 'Coda Caption';

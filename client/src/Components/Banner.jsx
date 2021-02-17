@@ -1,7 +1,7 @@
 import React from "react";
 
 // import banner from "../images/house1.jpg";
-
+import {Link } from 'react-router-dom'
 import "../StyleSheet/Banner.css";
 
 const Banner = () => {
@@ -18,6 +18,9 @@ const Banner = () => {
               <p>
                 looking to buy a new home, we offer many listings across various
                 states, including properties you won't find anyhwere else.
+                <div className="button-box">
+                <Link to="/house-sale"><button className="btn btn-primary">Buy here</button></Link>
+                 </div>
               </p>
             </div>
           </div>
@@ -27,6 +30,9 @@ const Banner = () => {
               <p>
                 looking to buy a new home, we offer many listings across various
                 states, including properties you won't find anyhwere else.
+                <div className="button-box">
+                <Link to="/list-your-property"><button className="btn btn-primary">sell here</button></Link>
+                </div>
               </p>
             </div>
           </div>
@@ -36,6 +42,9 @@ const Banner = () => {
               <p>
                 looking to buy a new home, we offer many listings across various
                 states, including properties you won't find anyhwere else.
+                <div className="button-box">
+                   <Link to="/house-rent"><button className="btn btn-primary">Rent here</button></Link>
+                </div>
               </p>
             </div>
           </div>

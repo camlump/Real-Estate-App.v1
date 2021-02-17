@@ -12,6 +12,7 @@ import ContactForm from './Components/ContactForm'
 import SearchResults from './Components/SearchResults'
 import HouseEditForm from './Components/EditHouseForm'
 import Footer from './Components/Footer'
+import About from './Components/About'
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
         <SearchResults />
         </Route>
         <Route path="/about-us">
-          {/* <About /> */}
+          <About />
           </Route>
        <Route path="/edit/:id">
           <HouseEditForm />

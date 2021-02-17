@@ -45,7 +45,7 @@ const ForSale = (props) => {
 
                   <div className="img_container">
                   <Link to={`/house-details/${house._id}`}>
-                    <img className="img-fluid"
+                    <img 
                       src={house.house_image}
                       alt="house picture"
                     />

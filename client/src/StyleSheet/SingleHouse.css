@@ -1,5 +1,5 @@
 
-
+@media( max-Width: 767px) {
 .HouseDescription__leftContainer {
     width: 100vw;
     margin-top: 20px;
@@ -22,6 +22,10 @@
 .HouseDescription__leftContainer .img__container:hover {
    
     filter: brightness(40%);
+}
+
+.HouseDescription__leftContainer  .placeholder-container {
+    display: none;
 }
 /* .HouseDescription__leftContainer .img__container img:hover {
     filter: brightness(40%);
@@ -73,6 +77,8 @@
     padding: 20px;
     text-align: left;
 }
+
+}
 @media( min-Width:411px) {
 
     .HouseDescription__leftContainer {
@@ -90,6 +96,9 @@
         text-align: left;
     }
 }
+
+
+
 
 
 @media (min-width: 768px) {
@@ -153,6 +162,22 @@
         padding-top: 0;
         text-align: left;
     }
+
+    .button-box {
+        margin-left: 30px;
+    }
+
+    .button-box button {
+        padding: auto 20px;
+    }
+
+    .button-box button .button-icon {
+       font-size: 15px;
+
+       
+    }
+
+
 
     
 

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 // import BackspaceIcon from '@material-ui/icons/Backspace';
 // import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "../StyleSheet/SingleHouse.css";
 import placeholder from "../images/placeholder-image.jpg";
@@ -124,11 +126,10 @@ const SingleHouse = (props) => {
               eum.
             </h4>
           </div>
-          <Link to={`/edit/${props.match.params.id}`}> <button>Edit House</button></Link> 
-          <Link to="/house-sale">
-            {" "}
-            <button onClick={handleDelete}>Delete House</button>
-          </Link>
+          <div className="button-box">
+          <Link to={`/edit/${props.match.params.id}`}> <button className="btn btn-primary" ><EditIcon className="button-icon"/>Edit House</button></Link> 
+          <Link to="/house-sale"> <button onClick={handleDelete} className="btn btn-danger"><DeleteIcon className="button-icon"/>Delete House</button></Link>
+          </div>
         </div>
       )}
       <div className="edit-from"></div>
